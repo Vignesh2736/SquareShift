@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Seat{
-	public int seatNo;
+	public int seatNumber;
 	public boolean booked;
 	public String position;
 	public Seat() {
@@ -9,15 +9,15 @@ class Seat{
 	}
 	public Seat(int seatNo) {
 		super();
-		this.seatNo = seatNo;
+		this.seatNumber = seatNo;
 		this.booked = false;
 		this.position = "";
 	}
-	public int getSeatNo() {
-		return seatNo;
+	public int getSeatNumber() {
+		return seatNumber;
 	}
-	public void setSeatNo(int seatNo) {
-		this.seatNo = seatNo;
+	public void setSeatNumber(int seatNumber) {
+		this.seatNumber = seatNumber;
 	}
 	public boolean getBooked() {
 		return booked;
@@ -101,7 +101,7 @@ class Block{
 		String result = "";
 		for(int i=0;i<this.rows;i++) {
 			for(int j=0;j<this.columns;j++) {
-				result+=this.seats[i][j].getPosition()+" "+this.seats[i][j].getSeatNo()+" ";
+				result+=this.seats[i][j].getPosition()+" "+this.seats[i][j].getSeatNumber()+" ";
 			}
 			result+="\n";
 		}
@@ -127,7 +127,7 @@ public class seatbooking {
 				for(int k=0;k<blk[i].columns;k++) {
 					if(book>count) {
 				        if(blk[i].seats[j][k]!=null && (!blk[i].seats[j][k].getBooked()) && (blk[i].seats[j][k].getPosition()==type)){
-				        	blk[i].seats[j][k].setSeatNo(count);
+				        	blk[i].seats[j][k].setSeatNumber(count);
 				        	count++;
 				        	blk[i].seats[j][k].setBooked(true);
 				        }
